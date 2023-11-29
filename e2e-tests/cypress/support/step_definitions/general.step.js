@@ -4,12 +4,13 @@ import {
   switchToPage,
   verifyFooter,
   verifyHeaderTabs,
-  verifyHeaderLogo
-} from '../pages/navigation.page';
+  verifyHeaderLogo,
+  goBackHomeWithLogo
+} from '../pages/general.js';
 
 import {
   verifyHomeHeader
-} from '../pages/home.page';
+} from '../pages/home.page.js';
 
 Then('I switch to {string} page', (pageName) => {
   switchToPage(pageName);
@@ -33,4 +34,16 @@ And("I verify all the header's tabs", () => {
 
 And('I scroll the page to {string}', (scrollDirection) => {
   cy.scrollTo(scrollDirection);
+});
+
+And('I press ENTER key', () => {
+  cy.focused().type('{enter}');
+});
+
+And('I copy {string} test data to temporary folder', (fileName) => {
+  cy.copyDataFile(fileName);
+});
+
+And('I get back to the Home page using WWC logo', () => {
+  goBackHomeWithLogo();
 });

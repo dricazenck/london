@@ -46,6 +46,9 @@ title: Mentors
                                     <li class="nav-item">
                                         <div class="nav-link mentees" data-index="{{mentor.index}}" id="bt-m-{{mentor.index}}">Mentees</div>
                                     </li>
+                                    <li class="nav-item">
+                                        <div class="nav-link reviews" data-index="{{mentor.index}}" id="bt-v-{{mentor.index}}">Reviews</div>
+                                    </li>
                                 </ul>
                             </div>
 
@@ -70,9 +73,9 @@ title: Mentors
                                 <p class="network">
                                     {% for network in mentor.network %}
                                         {% if network.linkedin %}
-                                            <span><a href="{{network.linkedin}}" target="_blank">
+                                            <a href="{{network.linkedin}}" target="_blank">
                                                 {% include icons/linkedin.svg %}
-                                            </a></span>
+                                            </a>
                                         {% endif %}
                                         {% if network.twitter %}
                                             <a href="{{network.twitter}}" target="_blank">
@@ -102,6 +105,11 @@ title: Mentors
                                         {% if network.telegram %}
                                         <a href="{{network.telegram}}" target="_blank">
                                             {% include icons/telegram.svg %}
+                                        </a>
+                                        {% endif %}
+                                        {% if network.youtube %}
+                                        <a href="{{network.youtube}}" target="_blank">
+                                            {% include icons/youtube.svg %}
                                         </a>
                                         {% endif %}
                                     {% endfor %}
@@ -138,6 +146,26 @@ title: Mentors
                                     <p class="card-text"><label>Other potential mentoring topics</label>: {{mentor.skills.extra}}</p>
                                 {% endif %}
                             </div>
+
+                            {% assign reviews = site.data.reviews | where:"index", mentor.index %}
+                            {% if reviews == empty %}
+                                <div id="reviews-{{mentor.index}}" class="card-reviews d-none">
+                                    <p class="card-text">This mentor hasn't received any reviews yet.</p>
+                                </div>
+                            {% endif %}
+                            {% for review in reviews %}
+                                <div id="reviews-{{mentor.index}}" class="card-reviews d-none">
+                                    {% assign feedbacks = review.feedback | sort: 'date' | reverse %}
+                                    {% for feedback in feedbacks %}
+                                        <div class="stars stars{{feedback.score}}"></div>
+                                        <p class="card-text">
+                                          <span>{{feedback.date-f}}</span> - {{feedback.type}}
+                                        </p>
+                                        <p class="card-text">{{feedback.feedback}}</p><small>by {{feedback.name}}</small>
+                                        <hr>
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
