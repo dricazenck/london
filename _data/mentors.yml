@@ -1594,6 +1594,7 @@
 
 - name: Valeriia Amelchenia
   disabled: false
+  matched: true
   hours: 5
   position: QA Engineer, Technical Writer (Freelancer)
   type: both
@@ -2034,6 +2035,7 @@
 
 - name: Agrin Hilmkil
   disabled: false
+  matched: true
   hours: 4
   position: Senior Research Engineer, Microsoft Research
   type: long-term
@@ -2280,6 +2282,7 @@
     - Medium: https://medium.com/@rithik18
 
 - name: Mena Esezobor
+  matched: true
   disabled: false
   hours: 3
   position: Software engineer,	Gallagher re
