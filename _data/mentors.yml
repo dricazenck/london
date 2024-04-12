@@ -75,7 +75,7 @@
   position: Senior Software Engineer
   image: assets/images/mentors/3.jpeg
   location: València, Spain
-  type: both
+  type: long-term
   index: 3
   languages: Portuguese, English
   availability:
@@ -2811,7 +2811,7 @@
   sort: 10
   hours: 4
   position: Senior Data Scientist, Heyjobs GmBH
-  type: ad-hoc
+  type: long-term
   index: 88
   location: Düsseldorf, Germany
   bio: |
