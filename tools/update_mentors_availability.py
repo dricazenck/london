@@ -40,6 +40,6 @@ def update_availability(names: List[str], availability, mentors):
 
 
 if __name__ == "__main__":
-    yaml_file_path = '../../_data/mentors.yml'
+    yaml_file_path = '../_data/mentors.yml'
     data = load_yaml(yaml_file_path)
     print(len(data))

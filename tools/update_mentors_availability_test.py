@@ -1,6 +1,6 @@
 import unittest
 
-from src.update_mentors_availability import *
+from update_mentors_availability import *
 
 TEST_AVAILABILITY = [5, 6]
 TEST_MENTOR_1 = "Rajani Rao"
@@ -12,7 +12,7 @@ TEST_MENTORS = [TEST_MENTOR_1, TEST_MENTOR_2]
 class TestUpdateMentorsAutomation(unittest.TestCase):
 
     def setUp(self):
-        self.data = load_yaml("../../_data/mentors.yml")
+        self.data = load_yaml("../_data/mentors.yml")
 
     def test_load_file(self):
         self.assertEqual(89, len(self.data))
