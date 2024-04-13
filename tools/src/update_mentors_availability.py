@@ -1,3 +1,5 @@
+from typing import List
+
 import yaml
 
 
@@ -25,6 +27,16 @@ def find_mentors_by_names(names, mentors):
             found_mentors.append(mentor)
 
     return found_mentors
+
+
+def update_availability(names: List[str], availability, mentors):
+    """Process a list of mentors names and update their availability."""
+
+    for mentor in mentors:
+        if mentor.get('name') in names:
+            mentor['availability'] = availability
+
+    return mentors
 
 
 if __name__ == "__main__":
