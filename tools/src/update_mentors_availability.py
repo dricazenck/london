@@ -28,6 +28,6 @@ def find_mentors_by_names(names, mentors):
 
 
 if __name__ == "__main__":
-    yaml_file_path = '/Users/dricazenck/workspace/london/_data/mentors.yml'
+    yaml_file_path = '../../_data/mentors.yml'
     data = load_yaml(yaml_file_path)
     print(len(data))

@@ -1,12 +1,12 @@
 import unittest
 
-from update_mentors_availability import *
+from src.update_mentors_availability import *
 
 
 class TestUpdateMentorsAutomation(unittest.TestCase):
 
     def setUp(self):
-        self.data = load_yaml("../_data/mentors.yml")
+        self.data = load_yaml("../../_data/mentors.yml")
 
     def test_load_file(self):
         self.assertEqual(89, len(self.data))
@@ -24,7 +24,3 @@ class TestUpdateMentorsAutomation(unittest.TestCase):
     def test_found_mentors_by_name(self):
         found_mentors = find_mentors_by_names(["Rajani Rao", "Eleonora Belova"], self.data)
         self.assertEqual(2, len(found_mentors))
-
-
-if __name__ == '__main__':
-    unittest.main()
