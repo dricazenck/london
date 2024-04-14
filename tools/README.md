@@ -1,10 +1,12 @@
 # Website Automations
 
-- [Dependencies](#dependencies)
-- [Create mentor](#create-mentor)
-- [Update Mentor](#update-mentor)
-  - [How to Execute](#how-to-execute)
-  - [How to Test](#how-to-test)
+- [Website Automations](#website-automations)
+  - [Dependencies](#dependencies)
+  - [Create mentor](#create-mentor)
+  - [Update Mentor](#update-mentor)
+    - [How to Execute](#how-to-execute)
+      - [Script](#script)
+      - [How to Test](#how-to-test)
 
 ## Dependencies
 
@@ -31,7 +33,7 @@ This script will update mentor by email to include: availability, disable, match
 #### Script
 
 ```shell
-pythom update_mentors_availability.py
+python update_mentors_availability.py
 ```
 
 It will print the total of mentors existent in the yml file. 
