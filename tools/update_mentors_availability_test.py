@@ -1,6 +1,5 @@
 import unittest
-from io import StringIO
-import sys
+
 from update_mentors_availability import *
 
 TEST_AVAILABILITY = [5, 6]
@@ -55,8 +54,9 @@ class TestUpdateMentorsAutomation(unittest.TestCase):
     def test_main_without_args(self):
         sys.argv = ['update_mentors_availability.py']
         main()
-    #     no change happen assert
+        # TODO add assertion
 
     def test_main_update_single_mentor(self):
         sys.argv = ['update_mentors_availability.py', [TEST_MENTOR_3, TEST_MENTOR_1], 'availability', [5, 6, 7]]
         main()
+        # TODO add assertion
